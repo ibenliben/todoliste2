@@ -3,11 +3,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "PUTT INN DINE VERDIER HER!",
-    authDomain: ".... ",
-    projectId: "...",
-
-    appId: "....",
+  apiKey: "AIzaSyAqwk8ZlRr_azw7h4lUeTFVZ3s-ghHYf1Y",
+  authDomain: "todo-liste-73ff2.firebaseapp.com",
+  projectId: "todo-liste-73ff2",
+  storageBucket: "todo-liste-73ff2.appspot.com",
+  messagingSenderId: "1022197264241",
+  appId: "1:1022197264241:web:dbbe378e9f404c1179d0d0"
 }
 
 // Initialize Firebase
@@ -35,8 +36,9 @@ if (docSnap.exists()) {
 }
 
 
-const q = query(collection(db, "todoItems"), where("erFerdig", "==", false));
-const querySnapshot = await getDocs(q);
+// const q = query(collection(db, "todoItems"), where("erFerdig", "==", false));
+// const querySnapshot = await getDocs(q);
+const querySnapshot = await getDocs(collection(db, "todoItems"));
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
   console.log(doc.id, " => ", doc.data());
